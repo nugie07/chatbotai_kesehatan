@@ -1,0 +1,64 @@
+===========================================
+CARA MENJALANKAN APLIKASI CHATBOT AI KESEHATAN
+===========================================
+
+LANGKAH 1: Buka PowerShell atau Command Prompt
+   - Tekan Windows + R
+   - Ketik: powershell
+   - Tekan Enter
+
+LANGKAH 2: Masuk ke folder project
+   cd C:\xxxx\xxxx\xxx\xxxx\chatbotai
+
+LANGKAH 3: Aktifkan Virtual Environment
+   
+   Untuk PowerShell:
+   .\venv\Scripts\Activate.ps1
+   
+   Jika error "execution policy", jalankan dulu:
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   
+   Atau gunakan Command Prompt (cmd):
+   venv\Scripts\activate.bat
+
+LANGKAH 4: Pastikan virtual environment aktif
+   Anda akan melihat (venv) di awal command prompt
+   
+   Contoh:
+   (venv) PS C:\xxx\xxx\xxx\xxxx\chatbotai> ( sesuaikan dari folder yang anda tempatkan)
+
+LANGKAH 5: Jalankan aplikasi
+   python -m streamlit run main.py
+   
+   ATAU jika streamlit sudah di PATH:
+   streamlit run main.py
+
+LANGKAH 6: Buka browser
+   - Browser akan otomatis terbuka
+   - Atau buka manual: http://localhost:8501
+
+LANGKAH 7: Untuk menghentikan aplikasi
+   - Tekan Ctrl + C di terminal
+
+===========================================
+TROUBLESHOOTING
+===========================================
+
+Error: "streamlit tidak dikenali"
+   → Pastikan virtual environment aktif (lihat langkah 3)
+   → Gunakan: python -m streamlit run main.py
+
+Error: "execution policy" di PowerShell
+   → Jalankan: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   → Atau gunakan Command Prompt (cmd) saja
+
+Error: "GEMINI_API_KEY tidak ditemukan"
+   → Pastikan file .env ada di folder root
+   → Pastikan isi: GEMINI_API_KEY=your_key_here
+
+Port 8501 sudah digunakan
+   → Streamlit akan otomatis menggunakan port lain (8502, 8503, dll)
+   → Lihat di terminal port berapa yang digunakan
+
+===========================================
+
